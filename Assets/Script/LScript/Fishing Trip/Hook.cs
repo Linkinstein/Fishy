@@ -9,6 +9,11 @@ public class Hook : MonoBehaviour
     public Vector3 startPosition;
     private bool caughtFish;
 
+    public bool ended
+    {
+        get { return TripManager.Instance.ended; }
+    }
+
     private void Start()
     {
         startPosition = transform.localPosition;
@@ -16,21 +21,23 @@ public class Hook : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && !(transform.localPosition.y <= -8.5f) && !caughtFish)
+        if (!ended)
         {
-            if (boat.GetComponent<LBoatMovement>() != null) boat.GetComponent<LBoatMovement>().pause = true;
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
-        }
-        else if (transform.localPosition.y <= startPosition.y && !caughtFish)
-        {
-            returning();
-        }
+            if (Input.GetKey(KeyCode.Space) && !(transform.localPosition.y <= -8.5f) && !caughtFish)
+            {
+                if (boat.GetComponent<LBoatMovement>() != null) boat.GetComponent<LBoatMovement>().pause = true;
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
+            }
+            else if (transform.localPosition.y <= startPosition.y && !caughtFish)
+            {
+                returning();
+            }
 
-        if (caughtFish)
-        {
-            returning();
+            if (caughtFish)
+            {
+                returning();
+            }
         }
-
     }
 
     private void returning()

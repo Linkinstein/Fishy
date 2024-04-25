@@ -5,17 +5,24 @@ using UnityEngine;
 
 public class LFish : MonoBehaviour
 {
+
     public GameObject spawner;
     private Rigidbody2D rb;
-    private CapsuleCollider2D cc2d;
+    private SpriteRenderer sr;
     private int _x = 1;
 
-    [SerializeField] public int point = 0;
+    [SerializeField] public string fishName;
+    [SerializeField] public int fishValue;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] public bool tail = true;
 
     public bool caught = false;
     public Transform hook = null;
+
+    public bool ended
+    { 
+        get { return TripManager.Instance.ended; }
+    }
 
     public int x
     {
@@ -30,7 +37,7 @@ public class LFish : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        cc2d = GetComponent<CapsuleCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -51,21 +58,24 @@ public class LFish : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DespawnerL") && x == -1)
         {
-            if (tail) spawner.GetComponent<Spawner>().SpawnFish();
+            if (tail && !ended) spawner.GetComponent<Spawner>().SpawnFish();
             Destroy(this.gameObject);
         }
 
 
         if (collision.gameObject.CompareTag("DespawnerR") && x == 1)
         {
-            if (tail) spawner.GetComponent<Spawner>().SpawnFish();
+            if (tail && !ended) spawner.GetComponent<Spawner>().SpawnFish();
             Destroy(this.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Boat"))
         {
-            if (tail) spawner.GetComponent<Spawner>().SpawnFish();
-            TripManager.Instance.AddPoints(point);
+            if (!ended)
+            {
+                if (tail) spawner.GetComponent<Spawner>().SpawnFish();
+                TripManager.Instance.AddFish(fishName, fishValue, sr.sprite);
+            }
             Destroy(this.gameObject);
         }
     }

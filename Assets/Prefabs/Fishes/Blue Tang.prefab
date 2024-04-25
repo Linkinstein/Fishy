@@ -194,7 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  point: 6
+  fishName: Bue Tang
+  fishValue: 250
   moveSpeed: 4
   tail: 1
   caught: 0
