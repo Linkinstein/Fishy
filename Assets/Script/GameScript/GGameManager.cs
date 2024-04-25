@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GGameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GGameManager Instance { get; private set; }
 
     public int currentLevel = 1;
     public int pointsToAdvanceLevel = 10;
@@ -21,7 +22,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (pointsText != null)
         {
-            pointsText.text = "Points: " + currentPoints + "/"+ pointsToAdvanceLevel;
+            pointsText.text = "Points: " + currentPoints + "/" + pointsToAdvanceLevel;
         }
     }
 
@@ -90,11 +90,3 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("CongratulatoryScene");
     }
 }
-
-
-
-
-
-
-
-

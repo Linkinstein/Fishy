@@ -65,7 +65,7 @@ public class LFish : MonoBehaviour
         if (collision.gameObject.CompareTag("Boat"))
         {
             if (tail) spawner.GetComponent<Spawner>().SpawnFish();
-            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().AddPoints(point);
+            TripManager.Instance.AddPoints(point);
             Destroy(this.gameObject);
         }
     }

@@ -52,7 +52,7 @@ public class FishingController : MonoBehaviour
                 returning = false; 
                 if (hasFish)
                 {
-                    GameManager.Instance.AddPoints(fishPoints);
+                    //GameManager.Instance.AddPoints(fishPoints);
                     hasFish = false;
                     caughtFish.SetActive(false);
                     caughtFish = null;
