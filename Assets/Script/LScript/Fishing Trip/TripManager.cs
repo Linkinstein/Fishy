@@ -12,13 +12,16 @@ public class TripManager : MonoBehaviour
 
     public List<FishCaughtData> fishList = new List<FishCaughtData>();
 
-    [SerializeField] private float timeLimit = 60;
-    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject mainPrefab;
     [SerializeField] private GameObject textPrefab;
     [SerializeField] private GameObject[] panels;
+    [SerializeField] private GameObject[] timeCompass;
 
+
+    private int hour = 6;
+    private int minute = 00;
     private int totalEarned;
     private int totalFishes;
 
@@ -64,16 +67,48 @@ public class TripManager : MonoBehaviour
 
     private IEnumerator CountdownTimer()
     {
-        timerText.text = "Time: " + Mathf.Ceil(timeLimit) + "s";
-        while (timeLimit > 0)
+        string ampm = "AM";
+        timeText.text = hour.ToString("00") + ":" + minute.ToString("00") + ampm;
+        while (hour != 22)
         {
+            if (hour == 12) ampm = "PM";
             yield return new WaitForSeconds(1);
-            timeLimit -= 1;
-            timerText.text = "Time: " + Mathf.Ceil(timeLimit) + "s";
+            minute += 5;
+            if (minute == 60)
+            {
+                minute = 0;
+                hour++;
+            }
+            turnTimeCompass();
+            timeText.text = hour.ToString("00") + ":" + minute.ToString("00") + ampm;
         }
         StartCoroutine(CheckGameOver());
     }
 
+    private void turnTimeCompass()
+    {
+        Color gray50 = new Color(0.25f, 0.25f, 0.25f);
+        switch (hour)
+        {
+
+            case 6:
+                timeCompass[0].GetComponent<Image>().color = Color.white;
+                timeCompass[1].GetComponent<Image>().color = gray50;
+                timeCompass[2].GetComponent<Image>().color = gray50;
+                break;
+            case 12:
+                timeCompass[0].GetComponent<Image>().color = gray50;
+                timeCompass[1].GetComponent<Image>().color = Color.white;
+                timeCompass[2].GetComponent<Image>().color = gray50;
+                break;
+            case 20:
+                timeCompass[0].GetComponent<Image>().color = gray50;
+                timeCompass[1].GetComponent<Image>().color = gray50;
+                timeCompass[2].GetComponent<Image>().color = Color.white;
+                break;
+
+        }
+    }
 
     private IEnumerator CheckGameOver()
     {
