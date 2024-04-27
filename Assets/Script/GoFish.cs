@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartManager : MonoBehaviour
+public class GoFish : MonoBehaviour
 {
-    public void StartGame()
+    public void GoToLevel()
     {
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("LGame");
     }
 }
-

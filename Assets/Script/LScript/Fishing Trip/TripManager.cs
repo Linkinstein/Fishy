@@ -12,6 +12,9 @@ public class TripManager : MonoBehaviour
 
     public List<FishCaughtData> fishList = new List<FishCaughtData>();
 
+    [SerializeField] private SpriteRenderer backdrop;
+    [SerializeField] private Color nightColor;
+
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject mainPrefab;
@@ -26,6 +29,7 @@ public class TripManager : MonoBehaviour
     private int totalFishes;
 
     public bool ended = false;
+    public bool exitable = false;
 
     private void Awake()
     {
@@ -42,6 +46,11 @@ public class TripManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CountdownTimer());
+    }
+
+    private void Update()
+    {
+        backdropDarker();
     }
 
     public void AddFish(string fishName, int fishValue, Sprite fishIMG)
@@ -67,11 +76,13 @@ public class TripManager : MonoBehaviour
 
     private IEnumerator CountdownTimer()
     {
+        int deno = 0;
         string ampm = "AM";
-        timeText.text = hour.ToString("00") + ":" + minute.ToString("00") + ampm;
-        while (hour != 22)
+        timeText.text = (hour - deno).ToString("00") + ":" + minute.ToString("00") + ampm;
+        while (hour != 22 && !ended)
         {
             if (hour == 12) ampm = "PM";
+            if (hour == 13) deno = 12;
             yield return new WaitForSeconds(1);
             minute += 5;
             if (minute == 60)
@@ -80,9 +91,25 @@ public class TripManager : MonoBehaviour
                 hour++;
             }
             turnTimeCompass();
-            timeText.text = hour.ToString("00") + ":" + minute.ToString("00") + ampm;
+            timeText.text = (hour - deno).ToString("00") + ":" + minute.ToString("00") + ampm;
         }
-        StartCoroutine(CheckGameOver());
+        if (!ended) StartCoroutine(CheckGameOver());
+    }
+
+    private void backdropDarker()
+    {
+        int x = (hour * 100) + minute;
+        if (hour <= 8)
+        {
+            float t = ((x - 600f) / 200f);
+            backdrop.color = Color.Lerp(nightColor, Color.white, t);
+        }
+
+        if (hour >= 5)
+        {
+            float t = Mathf.Clamp01((x - 1700f) / 500f);
+            backdrop.color = Color.Lerp(Color.white, nightColor, t);
+        }
     }
 
     private void turnTimeCompass()
@@ -106,11 +133,10 @@ public class TripManager : MonoBehaviour
                 timeCompass[1].GetComponent<Image>().color = gray50;
                 timeCompass[2].GetComponent<Image>().color = Color.white;
                 break;
-
         }
     }
 
-    private IEnumerator CheckGameOver()
+    public IEnumerator CheckGameOver()
     {
         ended = true;
         endScreen.SetActive(true);
@@ -118,23 +144,25 @@ public class TripManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             GameObject npi = Instantiate(mainPrefab, panels[0].transform.position, Quaternion.identity);
-            npi.transform.SetParent(panels[0].transform);
+            npi.transform.SetParent(panels[0].transform, false);
             npi.GetComponent<EndScreenMainPanel>().panelSetup(fish.fishName, fish.fishIMG);
 
             yield return new WaitForSeconds(0.5f);
             npi = Instantiate(textPrefab, panels[1].transform.position, Quaternion.identity);
-            npi.transform.SetParent(panels[1].transform);
+            npi.transform.SetParent(panels[1].transform, false);
             npi.GetComponent<TextMeshProUGUI>().text = "x" + fish.quantity;
             totalFishes += fish.quantity;
             panels[3].GetComponent<TextMeshProUGUI>().text = "x" + totalFishes;
 
             yield return new WaitForSeconds(0.5f);
             npi = Instantiate(textPrefab, panels[2].transform.position, Quaternion.identity);
-            npi.transform.SetParent(panels[2].transform);
+            npi.transform.SetParent(panels[2].transform, false);
             npi.GetComponent<TextMeshProUGUI>().text = "$" + fish.totalValue;
             totalEarned += fish.totalValue;
             panels[4].GetComponent<TextMeshProUGUI>().text = "$" + totalEarned;
         }
+        GameManager.Instance.money += totalEarned;
+        exitable = true;
     }
 }
 
