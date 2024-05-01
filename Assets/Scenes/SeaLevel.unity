@@ -3637,7 +3637,11 @@ PrefabInstance:
     - target: {fileID: 931038729328287269, guid: bce6f0758e851ae4484b528f31f41752, type: 3}
       propertyPath: school.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 8c54f984cfffe034ba3c31f077e74169, type: 2}
+      objectReference: {fileID: 11400000, guid: b2a1e853ee079da4282e1d3db4ff1406, type: 2}
+    - target: {fileID: 931038729328287269, guid: bce6f0758e851ae4484b528f31f41752, type: 3}
+      propertyPath: school.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b2a1e853ee079da4282e1d3db4ff1406, type: 2}
     - target: {fileID: 2368862892193894822, guid: bce6f0758e851ae4484b528f31f41752, type: 3}
       propertyPath: m_Name
       value: Spawner (2)

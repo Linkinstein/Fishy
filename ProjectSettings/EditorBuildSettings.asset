@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LStart.unity
     guid: 2beaf7a645d0a464f8bf79a9d4031f60
   - enabled: 1
-    path: Assets/Scenes/LGame.unity
+    path: Assets/Scenes/SeaLevel.unity
     guid: 49140651c76cd4e4aaef3e6133439bf9
   - enabled: 1
     path: Assets/Scenes/Home.unity
