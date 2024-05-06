@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/LStart.unity
     guid: 2beaf7a645d0a464f8bf79a9d4031f60
   - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: f62205b5203c20345a4b2b1522392a86
+  - enabled: 1
     path: Assets/Scenes/SeaLevel.unity
     guid: 49140651c76cd4e4aaef3e6133439bf9
   - enabled: 1
-    path: Assets/Scenes/Home.unity
-    guid: f62205b5203c20345a4b2b1522392a86
+    path: Assets/Scenes/CaveLevel.unity
+    guid: 503570658bebb424f95db75cf7e81a39
+  - enabled: 1
+    path: Assets/Scenes/SwampLevel.unity
+    guid: d461f58b700d0c2409ce7cd46dfee33a
+  - enabled: 1
+    path: Assets/Scenes/LavaLevel.unity
+    guid: 08bcf4d66bc347648803fc390b9fca5b
   m_configObjects: {}

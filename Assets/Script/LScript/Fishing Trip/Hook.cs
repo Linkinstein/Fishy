@@ -5,14 +5,21 @@ using UnityEngine;
 public class Hook : MonoBehaviour
 {
     public Transform boat;
-    public float speed = 2.0f;
     public Vector3 startPosition;
     private bool caughtFish;
+    [SerializeField] private Transform bottom;
 
     public bool ended
     {
         get { return TripManager.Instance.ended; }
     }
+
+    public float speed
+    {
+        get { return GameManager.Instance.speed; }
+    }
+
+
 
     private void Start()
     {
@@ -23,7 +30,7 @@ public class Hook : MonoBehaviour
     {
         if (!ended)
         {
-            if (Input.GetKey(KeyCode.Space) && !(transform.localPosition.y <= -8.5f) && !caughtFish)
+            if (Input.GetKey(KeyCode.Space) && !(transform.position.y <= bottom.position.y) && !caughtFish)
             {
                 if (boat.GetComponent<LBoatMovement>() != null) boat.GetComponent<LBoatMovement>().pause = true;
                 transform.Translate(Vector3.down * speed * Time.deltaTime);

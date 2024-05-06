@@ -84,7 +84,7 @@ public class TripManager : MonoBehaviour
             if (hour == 12) ampm = "PM";
             if (hour == 13) deno = 12;
             yield return new WaitForSeconds(1);
-            minute += 5;
+            minute += 15;
             if (minute == 60)
             {
                 minute = 0;
