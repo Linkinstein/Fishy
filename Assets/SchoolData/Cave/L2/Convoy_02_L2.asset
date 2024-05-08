@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74c15de49da005542bfcf9f37d5143ed, type: 3}
-  m_Name: Convoy_03
+  m_Name: Convoy_02_L2
   m_EditorClassIdentifier: 
   fish:
+  - {fileID: 3482973150021965047, guid: dfb10ced7e1f77f40867ac2668aa86f4, type: 3}
+  - {fileID: 3482973150021965047, guid: 1bb2bc05b3691134088e28c165b762f0, type: 3}
   - {fileID: 3482973150021965047, guid: dfb10ced7e1f77f40867ac2668aa86f4, type: 3}
   - {fileID: 3482973150021965047, guid: 1bb2bc05b3691134088e28c165b762f0, type: 3}
   - {fileID: 3482973150021965047, guid: dfb10ced7e1f77f40867ac2668aa86f4, type: 3}
@@ -20,3 +22,5 @@ MonoBehaviour:
   - 0
   - 3
   - 6
+  - 9
+  - 12

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   fishName: Lantern
-  fishValue: 75
+  fishValue: 50
   moveSpeed: 6
   tail: 0
   caught: 0

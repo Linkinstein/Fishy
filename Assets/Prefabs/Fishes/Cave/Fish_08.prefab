@@ -174,8 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   fishName: Leg Fish
-  fishValue: 50
-  moveSpeed: 6
+  fishValue: 25
+  moveSpeed: 5
   tail: 0
   caught: 0
   hook: {fileID: 0}
