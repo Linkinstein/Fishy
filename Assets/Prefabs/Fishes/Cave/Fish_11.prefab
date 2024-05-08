@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8757287322924498656}
   - component: {fileID: 2579240620064405897}
   - component: {fileID: 941733914966985853}
-  - component: {fileID: -7501086878304856328}
+  - component: {fileID: 7968035495081897834}
   m_Layer: 0
   m_Name: Fish_11
   m_TagString: Fish
@@ -179,7 +179,7 @@ MonoBehaviour:
   tail: 0
   caught: 0
   hook: {fileID: 0}
---- !u!95 &-7501086878304856328
+--- !u!95 &7968035495081897834
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 3482973150021965047}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b10dd8146c170c4bb4a73403cd05c59, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d7f843fab3e4ca42ac3128cec6fa040, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
