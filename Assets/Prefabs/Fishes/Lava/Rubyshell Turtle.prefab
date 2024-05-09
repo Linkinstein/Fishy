@@ -196,7 +196,7 @@ MonoBehaviour:
   spawner: {fileID: 0}
   fishName: Rubyshell Turtle
   fishValue: 1000
-  moveSpeed: 6
+  moveSpeed: 3
   tail: 1
   caught: 0
   hook: {fileID: 0}

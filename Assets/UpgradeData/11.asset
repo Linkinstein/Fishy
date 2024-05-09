@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbebe2f4c5b71941ab57b6527414f7d, type: 3}
+  m_Name: 11
+  m_EditorClassIdentifier: 
+  icon: {fileID: -579350355, guid: 7e604587859ad7f4ca13b8057709f2bf, type: 3}
+  iName: Fish Market Entrepreneur
+  cost: 15000
+  desc: Teaches you how to haggle in the fish market by throwing around big words
+    like inflation, big inflation, or really really bad inflation. (+50% value to
+    all fishes caught.)

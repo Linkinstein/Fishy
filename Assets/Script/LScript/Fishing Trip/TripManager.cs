@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TripManager : MonoBehaviour
@@ -23,13 +21,16 @@ public class TripManager : MonoBehaviour
     [SerializeField] private GameObject[] timeCompass;
 
 
-    private int hour = 6;
+    public int hour = 6;
     private int minute = 00;
     private int totalEarned;
     private int totalFishes;
 
     public bool ended = false;
     public bool exitable = false;
+
+    private GameManager gm
+    { get { return GameManager.Instance; } }
 
     private void Awake()
     {
@@ -45,6 +46,7 @@ public class TripManager : MonoBehaviour
 
     private void Start()
     {
+        hour = gm.startTime;
         StartCoroutine(CountdownTimer());
     }
 
@@ -79,7 +81,7 @@ public class TripManager : MonoBehaviour
         int deno = 0;
         string ampm = "AM";
         timeText.text = (hour - deno).ToString("00") + ":" + minute.ToString("00") + ampm;
-        while (hour != 22 && !ended)
+        while (hour != 24 && !ended)
         {
             if (hour == 12) ampm = "PM";
             if (hour == 13) deno = 12;
@@ -105,9 +107,9 @@ public class TripManager : MonoBehaviour
             backdrop.color = Color.Lerp(nightColor, Color.white, t);
         }
 
-        if (hour >= 5)
+        if (hour >= 19)
         {
-            float t = Mathf.Clamp01((x - 1700f) / 500f);
+            float t = Mathf.Clamp01((x - 1800f) / 600f);
             backdrop.color = Color.Lerp(Color.white, nightColor, t);
         }
     }
@@ -142,19 +144,19 @@ public class TripManager : MonoBehaviour
         endScreen.SetActive(true);
         foreach (var fish in fishList)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             GameObject npi = Instantiate(mainPrefab, panels[0].transform.position, Quaternion.identity);
             npi.transform.SetParent(panels[0].transform, false);
             npi.GetComponent<EndScreenMainPanel>().panelSetup(fish.fishName, fish.fishIMG);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             npi = Instantiate(textPrefab, panels[1].transform.position, Quaternion.identity);
             npi.transform.SetParent(panels[1].transform, false);
             npi.GetComponent<TextMeshProUGUI>().text = "x" + fish.quantity;
             totalFishes += fish.quantity;
             panels[3].GetComponent<TextMeshProUGUI>().text = "x" + totalFishes;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             npi = Instantiate(textPrefab, panels[2].transform.position, Quaternion.identity);
             npi.transform.SetParent(panels[2].transform, false);
             npi.GetComponent<TextMeshProUGUI>().text = "$" + fish.totalValue;
@@ -165,8 +167,6 @@ public class TripManager : MonoBehaviour
         exitable = true;
     }
 }
-
-
 
 public class FishCaughtData
 {

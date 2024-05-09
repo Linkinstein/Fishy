@@ -8,6 +8,9 @@ public class HomeButtons : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject[] tabs;
 
+    private GameManager gm
+    { get { return GameManager.Instance; } }
+
     public void GoToMap()
     {
         anim.SetTrigger("2map");
@@ -32,15 +35,19 @@ public class HomeButtons : MonoBehaviour
 
     public void GoToLava()
     {
-        SceneManager.LoadScene("LavaLevel");
+        if (gm.upgrades[8] && gm.money >= 10000)
+        {
+            gm.money -= 10000;
+            SceneManager.LoadScene("LavaLevel");
+        }
     }
     public void GoToCave()
     {
-        SceneManager.LoadScene("CaveLevel");
+        if (gm.upgrades[6]) SceneManager.LoadScene("CaveLevel");
     }
     public void GoToSwamp()
     {
-        SceneManager.LoadScene("SwampLevel");
+        if (gm.upgrades[7]) SceneManager.LoadScene("SwampLevel");
     }
 
     private IEnumerator transition(int i)
