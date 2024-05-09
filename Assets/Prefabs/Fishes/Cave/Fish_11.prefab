@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.63134944, y: 0.02950114}
+  m_Offset: {x: -0.007245064, y: 0.016776338}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2864776, y: 0.60091233}
+  m_Size: {x: 0.9831995, y: 0.9996258}
   m_EdgeRadius: 0
 --- !u!50 &2579240620064405897
 Rigidbody2D:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   fishName: Target Fish
-  fishValue: 25
+  fishValue: 300
   moveSpeed: 5
   tail: 0
   caught: 0

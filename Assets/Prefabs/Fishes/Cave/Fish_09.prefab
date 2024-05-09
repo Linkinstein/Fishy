@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  fishName: Mouthful
-  fishValue: 100
+  fishName: Mouthful Fish
+  fishValue: 750
   moveSpeed: 7
   tail: 0
   caught: 0

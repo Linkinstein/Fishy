@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  fishName: Ugly
-  fishValue: 25
+  fishName: Bed Dweller Fish
+  fishValue: 250
   moveSpeed: 5
   tail: 0
   caught: 0

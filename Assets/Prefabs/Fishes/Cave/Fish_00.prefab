@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   fishName: Bug Fish
-  fishValue: 25
+  fishValue: 250
   moveSpeed: 5
   tail: 0
   caught: 0

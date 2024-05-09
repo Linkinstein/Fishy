@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  fishName: Flappy
-  fishValue: 100
+  fishName: Flappy Fish
+  fishValue: 1000
   moveSpeed: 7
   tail: 0
   caught: 0

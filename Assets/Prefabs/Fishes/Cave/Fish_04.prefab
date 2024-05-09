@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  fishName: Yellow Duck
-  fishValue: 75
+  fishName: Yellow Duck Fish
+  fishValue: 850
   moveSpeed: 6
   tail: 0
   caught: 0
