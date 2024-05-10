@@ -196,7 +196,7 @@ MonoBehaviour:
   spawner: {fileID: 0}
   fishName: Goldshell Turtle
   fishValue: 2000
-  moveSpeed: 8
+  moveSpeed: 4
   tail: 1
   caught: 0
   hook: {fileID: 0}

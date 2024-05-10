@@ -5,8 +5,13 @@ using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private SchoolData[] school;
+    [SerializeField] private SchoolData[] mornSchool;
+    [SerializeField] private SchoolData[] noonSchool;
+    [SerializeField] private SchoolData[] nightSchool;
     [SerializeField] private int x = 1;
+
+    private TripManager tm
+    { get { return TripManager.Instance; } }
 
     private void Start()
     {
@@ -21,6 +26,12 @@ public class Spawner : MonoBehaviour
 
     public void SpawnFish()
     {
+        SchoolData[] school = mornSchool;
+
+        if (tm.hour < 12) school = mornSchool; 
+        if (tm.hour >= 12 && tm.hour < 18) school = noonSchool;
+        if (tm.hour >= 18) school = nightSchool;
+
         int j = RNG();
         int length = school[j].fish.Length;
         for (int i = 0; i < length; i++)
@@ -41,6 +52,12 @@ public class Spawner : MonoBehaviour
 
     private int RNG()
     {
+        SchoolData[] school = mornSchool;
+
+        if (tm.hour < 12) school = mornSchool;
+        if (tm.hour >= 12 && tm.hour < 18) school = noonSchool;
+        if (tm.hour >= 18) school = nightSchool;
+
         return Random.Range(0, school.Length);
     }
 }

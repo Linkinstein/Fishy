@@ -196,7 +196,7 @@ MonoBehaviour:
   spawner: {fileID: 0}
   fishName: Volcanic Debris
   fishValue: 0
-  moveSpeed: 5
+  moveSpeed: 4
   tail: 1
   caught: 0
   hook: {fileID: 0}

@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class LBoatMovement : MonoBehaviour
 {
-    public float speed = 5f; // Adjust this to change player speed
     public bool pause = false;
     private Rigidbody2D rb;
+
+    public float speed = 3.0f;
+
+    public GameManager gm
+    {
+        get { return GameManager.Instance; }
+    }
+
+    public bool movable
+    {
+        get { return GameManager.Instance.upgrades[9]; }
+    }
+
 
     public bool ended
     {
@@ -15,12 +27,16 @@ public class LBoatMovement : MonoBehaviour
 
     void Start()
     {
+        speed = gm.bSpeed;
+        if (gm.upgrades[3]) speed += 1;
+        if (gm.upgrades[4]) speed += 1;
+        if (gm.upgrades[5]) speed += 1;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (!pause && !ended)
+        if ((!pause && !ended) || (movable && !ended))
         {
             // Get input for horizontal movement
             float moveInput = Input.GetAxis("Horizontal");

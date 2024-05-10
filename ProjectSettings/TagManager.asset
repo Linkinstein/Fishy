@@ -9,6 +9,7 @@ TagManager:
   - DespawnerL
   - DespawnerR
   - GameManager
+  - BigFish
   layers:
   - Default
   - TransparentFX

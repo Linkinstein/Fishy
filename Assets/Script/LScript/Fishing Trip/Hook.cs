@@ -8,21 +8,26 @@ public class Hook : MonoBehaviour
     public Vector3 startPosition;
     private bool caughtFish;
     [SerializeField] private Transform bottom;
+    public float speed = 2f;
 
     public bool ended
     {
         get { return TripManager.Instance.ended; }
     }
 
-    public float speed
+    public GameManager gm
     {
-        get { return GameManager.Instance.speed; }
+        get { return GameManager.Instance; }
     }
 
 
 
     private void Start()
     {
+        speed = gm.hSpeed;
+        if (gm.upgrades[0]) speed += 1;
+        if (gm.upgrades[1]) speed += 1;
+        if (gm.upgrades[2]) speed += 1;
         startPosition = transform.localPosition;
     }
 
@@ -61,6 +66,13 @@ public class Hook : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Fish") && !caughtFish)
+        {
+            caughtFish = true;
+            other.GetComponent<LFish>().hook = transform;
+            other.GetComponent<LFish>().caught = true;
+        }
+
+        if (other.CompareTag("BigFish") && !caughtFish && gm.upgrades[10])
         {
             caughtFish = true;
             other.GetComponent<LFish>().hook = transform;
