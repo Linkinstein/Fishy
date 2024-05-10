@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74c15de49da005542bfcf9f37d5143ed, type: 3}
-  m_Name: Convoy_02_L1
+  m_Name: Convoy_04_L2
   m_EditorClassIdentifier: 
   fish:
-  - {fileID: 3482973150021965047, guid: 599bf477fc10cef4eb7a44d0491fbb25, type: 3}
-  - {fileID: 3482973150021965047, guid: b0764e4d712694a49b4dbbcd0f333e0e, type: 3}
+  - {fileID: 3482973150021965047, guid: d49a9f83b342a0c478f77d1fe8513594, type: 3}
   - {fileID: 3482973150021965047, guid: 4b1000d1e1c2d1447a78cb7f22dd78eb, type: 3}
-  - {fileID: 3482973150021965047, guid: c83cf5d00f579b940a1dc00117456eb9, type: 3}
-  - {fileID: 3482973150021965047, guid: 599bf477fc10cef4eb7a44d0491fbb25, type: 3}
+  - {fileID: 3482973150021965047, guid: d49a9f83b342a0c478f77d1fe8513594, type: 3}
+  - {fileID: 3482973150021965047, guid: 4b1000d1e1c2d1447a78cb7f22dd78eb, type: 3}
+  - {fileID: 3482973150021965047, guid: d49a9f83b342a0c478f77d1fe8513594, type: 3}
   distances:
-  - 12
   - 0
+  - 5
   - 6
-  - 6
-  - 16
+  - 12
+  - 13
