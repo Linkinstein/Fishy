@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8757287322924498656}
   - component: {fileID: 2579240620064405897}
   - component: {fileID: 941733914966985853}
-  - component: {fileID: 3343349233407317657}
+  - component: {fileID: -1890068861742355955}
   m_Layer: 0
-  m_Name: Fish_06
+  m_Name: Shark
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 818836775, guid: 28fed7713085f9a42be9db2e678037b2, type: 3}
+  m_Sprite: {fileID: 1984418974, guid: a5dbaa417df297d40ba554938c362e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2006247, y: -0.03259152}
+  m_Offset: {x: 0.63134944, y: 0.02950114}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0930614, y: 0.82350016}
+  m_Size: {x: 1.2864776, y: 0.60091233}
   m_EdgeRadius: 0
 --- !u!50 &2579240620064405897
 Rigidbody2D:
@@ -173,13 +173,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  fishName: No Name
-  fishValue: 900
-  moveSpeed: 7
+  fishName: Shark
+  fishValue: 650
+  moveSpeed: 6
   tail: 0
   caught: 0
   hook: {fileID: 0}
---- !u!95 &3343349233407317657
+--- !u!95 &-1890068861742355955
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 3482973150021965047}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97b74021c47ad9c41a48aa3798b3368e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3966d004a7c16b94fa46950f76129479, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
