@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TripExit : MonoBehaviour
 {
     [SerializeField] private Sprite sprite;
+    [SerializeField] private bool tutorial = false;
 
     private Image sr;
 
@@ -31,6 +32,7 @@ public class TripExit : MonoBehaviour
 
     public void exitClick()
     {
+        if (tutorial) Tutorial.Instance.index = 4;
         if (!ended) StartCoroutine(TripManager.Instance.CheckGameOver());
         else if (exitable) SceneManager.LoadScene("Home");
     }

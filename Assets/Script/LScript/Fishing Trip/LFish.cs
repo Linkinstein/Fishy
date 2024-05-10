@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LFish : MonoBehaviour
 {
+    [SerializeField] private bool tutorial = false;
+    [SerializeField] private bool tongueFish = false;
 
     public GameObject spawner;
     private Rigidbody2D rb;
@@ -30,6 +32,7 @@ public class LFish : MonoBehaviour
         set
         {
             if (value < 0) transform.localScale = new Vector2(-1, transform.localScale.y);
+            if (value > 0) transform.localScale = new Vector2(1, transform.localScale.y);
             _x = value;
         }
     }
@@ -56,27 +59,38 @@ public class LFish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("DespawnerL") && x == -1)
+        if (!tongueFish)
         {
-            if (tail && !ended) spawner.GetComponent<Spawner>().SpawnFish();
-            Destroy(this.gameObject);
+            if (collision.gameObject.CompareTag("DespawnerL") && x == -1)
+            {
+                if (tail && !ended && !tutorial) spawner.GetComponent<Spawner>().SpawnFish();
+                if (tail && !ended && tutorial) spawner.GetComponent<TutorialSpawner>().SpawnFish();
+                if (!tutorial) Destroy(this.gameObject);
+            }
+
+
+            if (collision.gameObject.CompareTag("DespawnerR") && x == 1)
+            {
+                if (tail && !ended && !tutorial) spawner.GetComponent<Spawner>().SpawnFish();
+                if (tail && !ended && tutorial) spawner.GetComponent<TutorialSpawner>().SpawnFish();
+                if (!tutorial) Destroy(this.gameObject);
+            }
         }
-
-
-        if (collision.gameObject.CompareTag("DespawnerR") && x == 1)
+        else
         {
-            if (tail && !ended) spawner.GetComponent<Spawner>().SpawnFish();
-            Destroy(this.gameObject);
+            if (collision.gameObject.CompareTag("DespawnerL") && x == -1) x = 1;
+            if (collision.gameObject.CompareTag("DespawnerR") && x == 1) x = -1;
+            if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("BigFish")) Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Boat"))
         {
             if (!ended)
             {
-                if (tail) spawner.GetComponent<Spawner>().SpawnFish();
+                if (tail && !tutorial && !tongueFish) spawner.GetComponent<Spawner>().SpawnFish();
                 TripManager.Instance.AddFish(fishName, fishValue, sr.sprite);
             }
-            Destroy(this.gameObject);
+            if (!tutorial) Destroy(this.gameObject);
         }
     }
 }

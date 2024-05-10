@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TripManager : MonoBehaviour
 {
+    [SerializeField] private bool tutorial = false;
+
     public static TripManager Instance { get; private set; }
 
     public List<FishCaughtData> fishList = new List<FishCaughtData>();
@@ -46,13 +48,16 @@ public class TripManager : MonoBehaviour
 
     private void Start()
     {
-        hour = gm.startTime;
-        StartCoroutine(CountdownTimer());
+        if (!tutorial)
+        {
+            hour = gm.startTime;
+            StartCoroutine(CountdownTimer());
+        }
     }
 
     private void Update()
     {
-        backdropDarker();
+        if (!tutorial) backdropDarker();
     }
 
     public void AddFish(string fishName, int fishValue, Sprite fishIMG)
@@ -163,6 +168,9 @@ public class TripManager : MonoBehaviour
             totalEarned += fish.totalValue;
             panels[4].GetComponent<TextMeshProUGUI>().text = "$" + totalEarned;
         }
+        yield return new WaitForSeconds(0.25f);
+        if (gm.upgrades[11])totalEarned = (int)(totalEarned*1.5);
+        panels[4].GetComponent<TextMeshProUGUI>().text = "$" + totalEarned;
         GameManager.Instance.money += totalEarned;
         exitable = true;
     }

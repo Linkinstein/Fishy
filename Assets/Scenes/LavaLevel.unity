@@ -1281,10 +1281,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3012464881021685910, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012464881021685910, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206552075484847358, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799192504366031745, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592606525382668992, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6333739750779823530, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
       propertyPath: backdrop
       value: 
       objectReference: {fileID: 1768516785}
+    - target: {fileID: 7156974891743181093, guid: 8a2ee7fee8c43fd4f9eb7d328a869152, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

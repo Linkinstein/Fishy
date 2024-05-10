@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5959775894273326430}
   m_Layer: 0
   m_Name: Fish_03
-  m_TagString: Fish
+  m_TagString: BigFish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7646ea39e40434db9ec0727079cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: 0
+  tongueFish: 0
   spawner: {fileID: 0}
   fishName: Bed Dweller Fish
   fishValue: 250

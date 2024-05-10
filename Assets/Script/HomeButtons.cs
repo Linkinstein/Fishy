@@ -35,9 +35,9 @@ public class HomeButtons : MonoBehaviour
 
     public void GoToLava()
     {
-        if (gm.upgrades[8] && gm.money >= 10000)
+        if (gm.upgrades[8] && gm.money >= 5000)
         {
-            gm.money -= 10000;
+            gm.money -= 5000;
             SceneManager.LoadScene("LavaLevel");
         }
     }
