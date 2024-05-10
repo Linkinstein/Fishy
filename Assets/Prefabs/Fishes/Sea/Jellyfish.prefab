@@ -175,9 +175,9 @@ MonoBehaviour:
   tutorial: 0
   tongueFish: 0
   spawner: {fileID: 0}
-  fishName: No Name
-  fishValue: 900
-  moveSpeed: 7
+  fishName: JellyFish
+  fishValue: 300
+  moveSpeed: 8
   tail: 0
   caught: 0
   hook: {fileID: 0}
