@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974500b920fa474d9c339afb0c743ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   pause: 0
+  speed: 5
 --- !u!1 &4946904717722454966
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 710033df76255174ba4c8dbe5d4a0a59, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 710033df76255174ba4c8dbe5d4a0a59, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -448,3 +448,4 @@ MonoBehaviour:
   boat: {fileID: 9073298127035416022}
   startPosition: {x: 0, y: 0, z: 0}
   bottom: {fileID: 0}
+  speed: 2

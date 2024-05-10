@@ -41,13 +41,21 @@ public class HomeButtons : MonoBehaviour
             SceneManager.LoadScene("LavaLevel");
         }
     }
+
     public void GoToCave()
     {
         if (gm.upgrades[6]) SceneManager.LoadScene("CaveLevel");
     }
+
     public void GoToSwamp()
     {
         if (gm.upgrades[7]) SceneManager.LoadScene("SwampLevel");
+    }
+
+
+    public void GoToStart()
+    {
+        SceneManager.LoadScene("LStart");
     }
 
     private IEnumerator transition(int i)
