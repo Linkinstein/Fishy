@@ -197,7 +197,7 @@ MonoBehaviour:
   tongueFish: 0
   spawner: {fileID: 0}
   fishName: Dolphin
-  fishValue: 1000
+  fishValue: 850
   moveSpeed: 10
   tail: 1
   caught: 0

@@ -193,9 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7646ea39e40434db9ec0727079cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: 0
+  tongueFish: 0
   spawner: {fileID: 0}
   fishName: Goldbug
-  fishValue: 750
+  fishValue: 7500
   moveSpeed: 5
   tail: 1
   caught: 0

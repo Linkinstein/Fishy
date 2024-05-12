@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.893, y: 0.82, z: 0}
-  m_LocalScale: {x: 0.993, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   tongueFish: 0
   spawner: {fileID: 0}
   fishName: Leg Fish
-  fishValue: 350
+  fishValue: 700
   moveSpeed: 5
   tail: 0
   caught: 0

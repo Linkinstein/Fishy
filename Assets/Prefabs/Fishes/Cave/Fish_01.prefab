@@ -172,9 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7646ea39e40434db9ec0727079cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: 0
+  tongueFish: 0
   spawner: {fileID: 0}
   fishName: Swed Fish
-  fishValue: 500
+  fishValue: 100
   moveSpeed: 6
   tail: 0
   caught: 0

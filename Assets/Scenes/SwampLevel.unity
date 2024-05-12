@@ -561,6 +561,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 723947413}
     m_Modifications:
     - target: {fileID: 931038729328287269, guid: bce6f0758e851ae4484b528f31f41752, type: 3}
+      propertyPath: x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 931038729328287269, guid: bce6f0758e851ae4484b528f31f41752, type: 3}
       propertyPath: school.Array.size
       value: 1
       objectReference: {fileID: 0}

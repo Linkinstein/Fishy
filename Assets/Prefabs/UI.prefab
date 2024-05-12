@@ -574,11 +574,11 @@ MonoBehaviour:
   m_Content: {fileID: 4206552075484847358}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1904049487719870543}
@@ -1438,6 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 935985118, guid: 48a5d1ff4011f834496477421f3d58ac, type: 3}
+  tutorial: 0
 --- !u!1 &5586675927647350225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,11 +2311,11 @@ MonoBehaviour:
   m_Content: {fileID: 4799192504366031745}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1904049487719870543}
@@ -2715,11 +2716,11 @@ MonoBehaviour:
   m_Content: {fileID: 7156974891743181093}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1904049487719870543}
@@ -2923,6 +2924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5566e3cb9cd034c9555e02328c0177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: 0
   backdrop: {fileID: 0}
   nightColor: {r: 0.29411766, g: 0.29411766, b: 0.39215687, a: 1}
   timeText: {fileID: 8261938947424011782}
@@ -2939,5 +2941,6 @@ MonoBehaviour:
   - {fileID: 5586675927647350225}
   - {fileID: 7527572344044627469}
   - {fileID: 2864463874063821700}
+  hour: 6
   ended: 0
   exitable: 0

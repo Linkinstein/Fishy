@@ -176,7 +176,7 @@ MonoBehaviour:
   tongueFish: 0
   spawner: {fileID: 0}
   fishName: Shark
-  fishValue: 300
+  fishValue: 800
   moveSpeed: 8
   tail: 0
   caught: 0

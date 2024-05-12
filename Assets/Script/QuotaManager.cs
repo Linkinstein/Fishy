@@ -10,7 +10,8 @@ public class QuotaManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI day;
     [SerializeField] private TextMeshProUGUI quotaText;
     [SerializeField] private GameObject payPanel;
-    [SerializeField] private Button[] travel;
+    [SerializeField] private Button home;
+    [SerializeField] private Button shop;
     [SerializeField] private Button pay;
 
 
@@ -24,18 +25,28 @@ public class QuotaManager : MonoBehaviour
     {
         gm.SaveGame();
         gm.day++;
-        day.SetText( "Day " + gm.day + "/" + deadline[gm.deadIndex] );
-        quotaText.SetText( "/" + quota[gm.deadIndex] );
+        UpdateUI();
+    }
 
-        if (!(gm.deadIndex >= deadline.Length ) && gm.day == deadline[gm.deadIndex]) CollectionDay();
+    private void UpdateUI()
+    {
+        if (gm.deadIndex < deadline.Length)
+        {
+            day.SetText("Day " + gm.day + "/" + deadline[gm.deadIndex]);
+            quotaText.SetText("/" + quota[gm.deadIndex]);
+            if (gm.day == deadline[gm.deadIndex]) CollectionDay();
+        }
+        else
+        {
+            day.SetText("Day " + gm.day);
+            quotaText.SetText(" DEBT FREE");
+        }
     }
 
     private void CollectionDay()
     {
-        foreach (Button butt in travel)
-        { 
-            butt.interactable = false;
-        }
+        home.interactable = false;
+        shop.interactable = false;
 
         payPanel.SetActive( true );
     }
@@ -45,12 +56,11 @@ public class QuotaManager : MonoBehaviour
         if (gm.money >= quota[gm.deadIndex])
         {
             gm.money -= quota[gm.deadIndex];
-            foreach (Button butt in travel)
-            {
-                butt.interactable = true;
-            }
+            home.interactable = true;
+            shop.interactable = true;
             payPanel.SetActive(false);
             gm.deadIndex++;
+            UpdateUI();
         }
         else
         {

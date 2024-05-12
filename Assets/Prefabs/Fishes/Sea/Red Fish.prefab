@@ -197,7 +197,7 @@ MonoBehaviour:
   tongueFish: 0
   spawner: {fileID: 0}
   fishName: Red Fish
-  fishValue: 50
+  fishValue: 55
   moveSpeed: 3
   tail: 1
   caught: 0

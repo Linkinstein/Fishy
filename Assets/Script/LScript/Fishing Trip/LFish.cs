@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LFish : MonoBehaviour
 {
+    AudioSource aS;
     [SerializeField] private bool tutorial = false;
     [SerializeField] private bool tongueFish = false;
 
@@ -31,14 +32,15 @@ public class LFish : MonoBehaviour
         get { return _x; }
         set
         {
-            if (value < 0) transform.localScale = new Vector2(-1, transform.localScale.y);
-            if (value > 0) transform.localScale = new Vector2(1, transform.localScale.y);
+            if (value < 0) transform.localScale = new Vector3(-1,1,1);
+            if (value > 0) transform.localScale = new Vector3(1,1,1);
             _x = value;
         }
     }
 
     void Start()
     {
+        if(tongueFish) aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -80,7 +82,11 @@ public class LFish : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("DespawnerL") && x == -1) x = 1;
             if (collision.gameObject.CompareTag("DespawnerR") && x == 1) x = -1;
-            if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("BigFish")) Destroy(collision.gameObject);
+            if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("BigFish"))
+            {
+                aS.Play();
+                Destroy(collision.gameObject);
+            }
         }
 
         if (collision.gameObject.CompareTag("Boat"))

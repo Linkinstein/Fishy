@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
+    private AudioSource aS;
+
     public Transform boat;
     public Vector3 startPosition;
     private bool caughtFish;
@@ -29,6 +31,7 @@ public class Hook : MonoBehaviour
         if (gm.upgrades[1]) speed += 1;
         if (gm.upgrades[2]) speed += 1;
         startPosition = transform.localPosition;
+        aS = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,6 +73,7 @@ public class Hook : MonoBehaviour
             caughtFish = true;
             other.GetComponent<LFish>().hook = transform;
             other.GetComponent<LFish>().caught = true;
+            aS.Play();
         }
 
         if (other.CompareTag("BigFish") && !caughtFish && gm.upgrades[10])
@@ -77,6 +81,7 @@ public class Hook : MonoBehaviour
             caughtFish = true;
             other.GetComponent<LFish>().hook = transform;
             other.GetComponent<LFish>().caught = true;
+            aS.Play();
         }
     }
 

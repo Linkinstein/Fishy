@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < length; i++)
         {
             Vector3 pos = transform.position;
-            pos += new Vector3(-school[j].distances[i] * x, 0f, pos.y + 8);
+            pos += new Vector3(-school[j].distances[i] * x, 0f,0f);
             setupFish(Instantiate(school[j].fish[i], pos, Quaternion.identity), i + 1 == length);
         }
     }

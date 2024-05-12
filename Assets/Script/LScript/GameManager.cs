@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < upgrades.Length; i++)
         {
             string uName = "upgrade" + i;
-            upgrades[i] = (PlayerPrefs.GetInt("Name",0) != 0);
+            upgrades[i] = (PlayerPrefs.GetInt(uName, 0) != 0);
         }
     }
 
